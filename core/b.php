@@ -1,9 +1,5 @@
 <?php
-
-
-
 	class b{
-	
 		static function request(){   //  request that send on the link
 			$operation = @$_GET['op']; // variable that post from form
 			if($operation == ""){ // if don't write anything 
@@ -19,7 +15,8 @@
 				$controller = new $controllerName();
 				if ( $action != 'logout' && $action != 'login' && $action != 'check' ){
 					session::check();
-				}else $controller->$action();
+				}
+				$controller->$action();
 			}
 			
 		}
@@ -33,4 +30,4 @@
 			include ('template/'.$themeName.'/footer.php');
 			
 		}
-}
+	}

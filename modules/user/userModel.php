@@ -1,14 +1,5 @@
 <?php
-
-/**
- * Created by PhpStorm.
- * User: xhelenga
- * Date: 22.11.2016
- * Time: 16:48
- */
-class userModel
-{
-
+class userModel{
     function checkUser($email,$pass){
         $db = new db();
         $db->select();
@@ -16,7 +7,6 @@ class userModel
         $db->where("email=? and pass=?", array($email,$pass));
         return $db->fetchOneArray();
     }
-	
 	function listUser(){
 		$db = new db();
 		$db->select();
@@ -40,13 +30,12 @@ class userModel
 			$db = new db();
 			$db->update(array("name"=>$name,"surname"=>$surname,"email"=>$email,"pass"=>$pass), "tbl_user");
 			$db->where("user_id=?", array($userID));
-			return $db->fetchOneArray();
+			return $db->execute();
 		}
 	function deleteUser($userID){
 		$db = new db();
 		$db->delete("tbl_user");
 		$db->where("user_id=?", array($userID));
-		return $db->fetchArray();
+		return $db->execute();
 		}
-
 }

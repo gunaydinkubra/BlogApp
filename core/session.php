@@ -1,5 +1,5 @@
 <?php
-class session{
+	class session{
 	static function set($variable,$value){
 		$_SESSION[$variable] = $value;
 	}
@@ -9,7 +9,8 @@ class session{
 	static function check(){
 		if( !isset($_SESSION['user']) ){
 			b::template("login", "user/userLogin");
+			exit;
+			}
 		}
 	}
-}
 ?>
