@@ -23,8 +23,9 @@ class blogController
 		$title = $_POST['title'];
 		$content = $_POST['content'];
 		$category_id = $_POST['category_id'];
+		$tags = $_POST['tags'];
 		$model = new blogModel();
-		$result = $model->saveBlog($title,$content,$category_id);
+		$result = $model->saveBlog($title,$content,$category_id,$tags);
 	}
 	function edit(){
 		$blogID = $_GET['blog_id'];
@@ -40,10 +41,10 @@ class blogController
 		$blogID = $_GET['blog_id'];
 		$title = $_POST['title'];
 		$content = $_POST['content'];
-		//$tags = $_POST['tags'];
+		$tags = $_POST['tags'];
 		$category_id = $_POST['category_id'];
 		$model = new blogModel();
-		$model->updateBlog($title,$content,$blogID,$category_id);
+		$model->updateBlog($title,$content,$blogID,$category_id,$tags);
 		
 	}
 	function delete(){

@@ -1,11 +1,9 @@
 <form id="createNewCategory" name="createNewCategory" action="index.php?op=category-save" method="POST">
-	<div style="width:300px; clear:both">
-		<label style="float:left;">Create New Category:</label>
+	<div class="col-lg-2"></div>
+	<div class="col-lg-4 div-white">
+		<label class="control-lbl lbl-color">Create New Category</label>
+		<textarea class="form-control" cols="10" rows="7"></textarea>
+		<input class="btn btn-md btn-info mrgn"  type="submit" value="Save" />
 	</div>
-	<div style="width:300px; clear:both">
-		<textarea style="float:right" cols="40" rows="5" name="category_name" id="category_name"></textarea>
-	</div>
-	<div style="width:300px; clear:both">
-		<input style="float:right" type="submit" value="Save" />
-	</div>
+	<div class="col-lg-6"></div>
 </form>
